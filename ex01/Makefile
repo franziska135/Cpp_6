@@ -18,7 +18,7 @@ CXXFLAGS	=	-Wall -Wextra -Werror -g -std=c++98
 AR		=	ar rc
 RM		=	rm -f
 
-SRC		=	main.cpp Serializer.cpp Data.hpp
+SRC		=	main.cpp Serializer.cpp Data.cpp
 
 OBJS	=	$(SRC:.cpp=.o)
 

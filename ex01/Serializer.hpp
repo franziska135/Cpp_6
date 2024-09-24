@@ -3,17 +3,15 @@
 
 #include "Data.hpp"
 #include <iostream>
-#include <cstdint>
-//#include <stdint.h>
+#include <stdint.h>
 
 class Serializer {
-    public:
+    private:
         Serializer(void);
         Serializer(const Serializer &other);
-        ~Serializer(void);
-
         Serializer&         operator=(const Serializer &other);
-
+        ~Serializer(void);
+    public:
         static uintptr_t    serialize(Data *ptr);
         static Data*        deserialize(uintptr_t address);
 };

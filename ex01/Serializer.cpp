@@ -21,10 +21,10 @@ Serializer::~Serializer  () {
                 << std::endl;
 }
 
-uintptr_t    serialize(Data *ptr) {
+uintptr_t    Serializer::serialize(Data *ptr) {
     return  reinterpret_cast<uintptr_t>(ptr);
 }
 
-Data*        deserialize(uintptr_t address) {
+Data*        Serializer::deserialize(uintptr_t address) {
     return  reinterpret_cast<Data*>(address);
 }

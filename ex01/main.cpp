@@ -1,4 +1,5 @@
 #include "Serializer.hpp"
+#include "Data.hpp"
 
 int main (void) {
     Data    test;
@@ -7,18 +8,19 @@ int main (void) {
     std::cout << test << std::endl;
     uintptr_t serialized = Serializer::serialize(&test);
 
+    std::cout << std::endl;
     std::cout << "serialized unsigned int:\t" << serialized << std::endl;
-    std::cout << "address of test struct:\t" << &test << std::endl;
+    std::cout << "address of test struct:\t\t" << &test << std::endl;
     
     Data    *deserialized;
     deserialized = Serializer::deserialize(serialized);
 
     if (deserialized == &test) {
+        std::cout   << std::endl;
         std::cout   << "Deserialization successful" << std::endl;
-        std::cout   << "deserialized Data:"
-                    << deserialized << std::endl;
-        std::cout   << "original:"
-                    << test << std::endl;
+        std::cout   << "dezerialized: \t"
+                    << *deserialized << std::endl;
+        std::cout   << "original: \t" << test << std::endl;
     }
     else
         std::cout   << "Deserialization NOT successful" << std::endl;
