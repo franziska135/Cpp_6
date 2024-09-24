@@ -61,5 +61,9 @@ int main(void) {
     identify(*oB);
     std::cout << "Should identify C: ";
     identify(*oC);
+
+    delete oA;
+    delete oB;
+    delete oC;
     return 1;
 }
